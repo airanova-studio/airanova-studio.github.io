@@ -556,6 +556,43 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
 
 .intro{min-height:150vh;min-height:150svh} .intro .pin{position:sticky;top:0;height:100vh;height:100svh}
 
+/* тест «Скільки коштує вам ручна робота» */
+.rtl{display:grid;gap:8px}
+.rtl label{display:flex!important;gap:12px;align-items:flex-start;cursor:pointer;border:1px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .2s,background .2s}
+.rtl label:hover{border-color:rgba(111,227,255,.5)}
+.rtl input{position:absolute;opacity:0;pointer-events:none}
+.rtl i{flex:none;width:20px;height:20px;border:1.5px solid var(--muted);border-radius:6px;margin-top:1px;position:relative;transition:all .2s}
+.rtl input:checked~i{border-color:var(--sig);background:var(--sig)}
+.rtl input:checked~i:after{content:"";position:absolute;left:5px;top:2px;width:6px;height:11px;border:solid #04060c;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.rtl label:has(input:checked){border-color:var(--sig);background:rgba(255,138,31,.08)}
+.rtl input:focus-visible~i{outline:2px solid var(--ice);outline-offset:2px}
+.rtl span{font:400 15px/1.4 var(--f-body);color:var(--fg)}
+.rtt{display:grid;gap:14px}
+.rtt>div{border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;gap:10px}
+.rtt b{font:500 14.5px/1.35 var(--f-body)}
+.dform input[type=number]{width:100%;background:#05070e;border:1px solid var(--line);border-radius:12px;padding:11px 14px;color:var(--fg);font:400 16px/1.45 var(--f-body)}
+.dform input[type=number]:focus{outline:none;border-color:var(--ice)}
+.rtres{display:grid;gap:14px}
+.rtbig{border:1px solid rgba(255,138,31,.5);border-radius:18px;padding:18px 20px;background:radial-gradient(420px 200px at 0% 0%,rgba(255,138,31,.16),transparent 70%),#05070e}
+.rtbig small{display:block;font:400 12px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rtbig strong{display:block;font:800 clamp(30px,6vw,44px)/1.1 var(--f-display);color:var(--sig2);margin:8px 0 4px}
+.rtbig span{color:var(--muted);font-size:14.5px}
+.rtfix{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.rtfix li{border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14.5px;color:var(--muted)}
+.rtfix li b{display:block;color:var(--fg);font-weight:600}
+.rtfix li em{color:var(--ok);font-style:normal}
+.final .rtlink{background:none;border:0;padding:0;color:var(--fg);font:inherit;text-decoration:underline;text-decoration-color:rgba(234,240,255,.35);text-underline-offset:4px;cursor:pointer}
+.final .rtlink:hover{text-decoration-color:var(--sig)}
+/* окремі сторінки послуг */
+.svbox{margin-top:clamp(60px,9vw,110px);border:1px solid var(--line);border-radius:28px;padding:clamp(24px,4vw,44px);background:rgba(4,6,12,.88);backdrop-filter:blur(6px)}
+.svl{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.svl a{display:grid;gap:8px;align-content:start;border:1px solid var(--line);border-radius:18px;padding:18px;background:var(--panel2);color:var(--fg);text-decoration:none;transition:border-color .25s,transform .25s}
+.svl a:hover{border-color:var(--ice);transform:translateY(-2px)}
+.svl b{font:600 16px/1.3 var(--f-display)} .svl span{color:var(--muted);font-size:14px}
+.svl i{font:400 12px var(--f-mono);color:var(--ice);font-style:normal}
+@media (max-width:900px){.svl{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.svl{grid-template-columns:1fr}}
+.case p b{color:var(--fg);font-weight:600} #cases .res:before{content:"Результат. ";color:var(--ok);font-weight:600} .case p.was{color:var(--muted)}
 </style>
 
 </head>
@@ -843,6 +880,7 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
     <article class="card case tilt rv" data-more="Пульт відкривається в телефоні: показники, сповіщення й кнопки запуску задач під рукою.|Власник керує бізнесом із будь-якого місця й не дізнається про проблему останнім."><h3>Бізнес у телефоні</h3><p>Не ще одна таблиця, а пульт: дивитесь і керуєте одним пальцем.</p></article>
     <article class="card case tilt rv" data-more="До кожного рішення додаємо інструкцію без жаргону: що це, як користуватись, що робити, якщо зупинилось.|Команда користується системою з першого дня, а не обходить її стороною."><h3>Мовою власника, а не програміста</h3><p>Пояснюємо просто й покроково, з назвами кнопок.</p></article>
     <article class="card case tilt rv" data-more="Після запуску можемо взяти систему на підтримку: стежимо за зв'язками, додаємо показники й нові задачі.|Вкладення не знецінюються: система розвивається разом із бізнесом."><h3>Не зникаємо після запуску</h3><p>Підтримуємо й розвиваємо те, що побудували.</p></article>
+    <article class="card case tilt rv" data-more="Кожна зв'язка стежить сама за собою. Якщо замовлення не дійшло в CRM, чек не видався або дані перестали оновлюватись, вам і нам одразу приходить повідомлення в Telegram з тим, що саме сталося.|Про проблему ви дізнаєтесь від системи за хвилини, а не від клієнта за кілька днів."><h3>Збій не пройде тихо</h3><p>Якщо щось зупинилось, повідомлення в Telegram приходить одразу.</p></article>
     <article class="card case tilt rv" data-more="Перед роботою робимо аудит і прямо кажемо, де автоматизація окупиться, а де ні.|Ви не платите за те, що вам не потрібно, і знаєте план наперед."><h3>Чесне «ні»</h3><p>Беремо лише те, що точно доведемо до кінця.</p></article>
   </div>
   <div class="next rv"><span>Слова легко написати. Ось що вже працює.</span><a class="btn mag" href="#cases">Далі: що вже працює в нашому магазині <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
@@ -855,12 +893,12 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
     <p>Усе нижче щодня працює в нашому інтернет-магазині одягу. Внутрішні цифри магазину не показуємо. Натисніть на картку, щоб побачити, як вона пов'язана з рештою системи.</p>
   </div>
   <div class="cases">
-    <article class="card case tilt rv" data-more="Пульт забирає дані з CRM, обліку, реклами й сайту та оновлюється сам. З нього ж запускаються звірки й задачі.|Власник бачить відхилення того ж дня й реагує, поки воно не стало збитком."><h3>Пульт бізнесу в телефоні</h3><p>Продажі, реклама, залишки, гроші й нічні задачі зведені на один екран, який оновлюється сам.</p><p class="res">Стан бізнесу видно будь-коли, без вивантажень.</p><div><span class="tag">Google Sheets</span><span class="tag">Apps Script</span></div></article>
-    <article class="card case tilt rv" data-more="KeyCRM стоїть у центрі: приймає замовлення із сайту й роздає команди касі, обліку та доставці.|Та сама команда обробляє більше замовлень, бо не витрачає час на перенесення даних."><h3>Магазин, CRM, фінанси й каса в одній зв'язці</h3><p>Замовлення із сайту потрапляють у KeyCRM, рух грошей видно у Finmap, чеки видає Checkbox. Оплата через WayForPay, доставка Новою поштою й Укрпоштою.</p><p class="res">Дані між системами ніхто не переносить руками.</p><div><span class="tag">WooCommerce</span><span class="tag">KeyCRM</span><span class="tag">Finmap</span><span class="tag">Checkbox</span></div></article>
-    <article class="card case tilt rv" data-more="Скрипт порівнює товари й залишки в KeyCRM і на сайті та складає список розбіжностей для виправлення.|Немає продажів товару, якого вже нема, і немає «невидимих» залишків, що лежать без руху."><h3>Синхронізація залишків і звірка артикулів</h3><p>Скрипти на Python звіряють товари й залишки між KeyCRM і сайтом та знаходять розбіжності в артикулах.</p><p class="res">Розбіжності знаходяться автоматично.</p><div><span class="tag">Python</span><span class="tag">KeyCRM API</span></div></article>
-    <article class="card case tilt rv" data-more="Нічний ШІ-менеджер відповідає клієнтам за скриптами, звіряє оплати й лишає команді зведення на ранок.|Нічні звернення перетворюються на замовлення, а не на втрачених клієнтів."><h3>Нічна зміна без людей</h3><p>Уночі ШІ-менеджер відповідає клієнтам, а скрипти виконують рутину. Зранку команда бачить готовий результат.</p><p class="res">Магазин не «зачиняється» на ніч.</p><div><span class="tag">ШІ-менеджер</span><span class="tag">Розклад</span></div></article>
-    <article class="card case tilt rv" data-more="UTM-мітки із замовлень зводяться з витратами з Meta, Google Ads і GA4 на одному екрані пульта.|Бюджет іде в рекламу, яка приводить покупців, а не просто перегляди."><h3>Звідки прийшло замовлення</h3><p>UTM-мітки на замовленнях і дані реклами в Instagram та Facebook, Google Ads і GA4 зведені разом.</p><p class="res">Видно, яка реклама приводить покупців.</p><div><span class="tag">Meta API</span><span class="tag">Instagram</span><span class="tag">Google Ads</span><span class="tag">GA4</span></div></article>
-    <article class="card case tilt rv" data-more="Каса під'єднана до CRM: чек формується з оплаченого замовлення й надходить клієнту.|Фіскалізація не забирає часу команди й не залежить від того, чи хтось не забув."><h3>Checkbox під ключ</h3><p>Створення КЕП, реєстрація кас і касирів, підключення фіскалізації до магазину та CRM.</p><p class="res">Чеки видаються самі, за правилами.</p><div><span class="tag">Checkbox</span><span class="tag">КЕП</span><span class="tag">ПРРО</span></div></article>
+    <article class="card case tilt rv" data-more="Пульт забирає дані з CRM, обліку, реклами й сайту та оновлюється сам. З нього ж запускаються звірки й задачі.|Власник бачить відхилення того ж дня й реагує, поки воно не стало збитком."><h3>Пульт бізнесу в телефоні</h3><p class="was"><b>Було.</b> Щоб зрозуміти стан бізнесу, треба було по черзі відкривати CRM, рекламні кабінети й таблиці.</p><p><b>Зробили.</b> Звели продажі, рекламу, залишки, гроші й нічні задачі на один екран у телефоні.</p><p class="res">Стан бізнесу видно будь-коли, дані оновлюються самі кожні 10 хвилин.</p><div><span class="tag">Google Sheets</span><span class="tag">Apps Script</span></div></article>
+    <article class="card case tilt rv" data-more="KeyCRM стоїть у центрі: приймає замовлення із сайту й роздає команди касі, обліку та доставці.|Та сама команда обробляє більше замовлень, бо не витрачає час на перенесення даних."><h3>Магазин, CRM, фінанси й каса в одній зв'язці</h3><p class="was"><b>Було.</b> Замовлення, оплати, чеки й рух грошей жили в різних системах, і дані між ними переносили руками.</p><p><b>Зробили.</b> Замовлення із сайту потрапляють у KeyCRM, рух грошей видно у Finmap, чеки видає Checkbox. Оплата через WayForPay, доставка Новою поштою й Укрпоштою.</p><p class="res">Дані між системами ніхто не переносить руками.</p><div><span class="tag">WooCommerce</span><span class="tag">KeyCRM</span><span class="tag">Finmap</span><span class="tag">Checkbox</span></div></article>
+    <article class="card case tilt rv" data-more="Скрипт порівнює товари й залишки в KeyCRM і на сайті та складає список розбіжностей для виправлення.|Немає продажів товару, якого вже нема, і немає «невидимих» залишків, що лежать без руху."><h3>Синхронізація залишків і звірка артикулів</h3><p class="was"><b>Було.</b> Розбіжності в артикулах і залишках між сайтом і CRM доводилось шукати вручну.</p><p><b>Зробили.</b> Скрипти на Python самі звіряють товари й залишки між KeyCRM і сайтом та складають список розбіжностей.</p><p class="res">Розбіжності знаходяться автоматично.</p><div><span class="tag">Python</span><span class="tag">KeyCRM API</span></div></article>
+    <article class="card case tilt rv" data-more="Нічний ШІ-менеджер відповідає клієнтам за скриптами, звіряє оплати й лишає команді зведення на ранок.|Нічні звернення перетворюються на замовлення, а не на втрачених клієнтів."><h3>Нічна зміна без людей</h3><p class="was"><b>Було.</b> Увечері й уночі клієнтам ніхто не відповідав, а рутина чекала ранку.</p><p><b>Зробили.</b> Уночі ШІ-менеджер відповідає клієнтам, а скрипти виконують рутину. Зранку команда бачить готовий результат.</p><p class="res">Магазин не «зачиняється» на ніч.</p><div><span class="tag">ШІ-менеджер</span><span class="tag">Розклад</span></div></article>
+    <article class="card case tilt rv" data-more="UTM-мітки із замовлень зводяться з витратами з Meta, Google Ads і GA4 на одному екрані пульта.|Бюджет іде в рекламу, яка приводить покупців, а не просто перегляди."><h3>Звідки прийшло замовлення</h3><p class="was"><b>Було.</b> Дані реклами лежали в різних кабінетах, і не було видно, яка саме приводить покупців.</p><p><b>Зробили.</b> UTM-мітки на замовленнях і дані реклами в Instagram та Facebook, Google Ads і GA4 зведені разом.</p><p class="res">Видно, яка реклама приводить покупців.</p><div><span class="tag">Meta API</span><span class="tag">Instagram</span><span class="tag">Google Ads</span><span class="tag">GA4</span></div></article>
+    <article class="card case tilt rv" data-more="Каса під'єднана до CRM: чек формується з оплаченого замовлення й надходить клієнту.|Фіскалізація не забирає часу команди й не залежить від того, чи хтось не забув."><h3>Checkbox під ключ</h3><p class="was"><b>Було.</b> Потрібно було отримати КЕП, зареєструвати каси й касирів і навчити магазин видавати чеки за правилами.</p><p><b>Зробили.</b> Створили КЕП, зареєстрували каси й касирів, підключили фіскалізацію до магазину та CRM.</p><p class="res">Чеки видаються самі, за правилами.</p><div><span class="tag">Checkbox</span><span class="tag">КЕП</span><span class="tag">ПРРО</span></div></article>
   </div>
   <div class="next rv"><span>Хочете так само? Ось як проходить робота.</span><a class="btn mag" href="#how">Далі: як ми працюємо <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M4 9l4 4 4-4"/></svg></a></div>
 </div></section>
@@ -890,7 +928,7 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
     <div class="audl">
       <div data-more="Скрипти, таблиці, зв'язки між системами й налаштування передаємо вам повністю, нічого не тримаємо в себе.|Систему зможе підтримувати й інший виконавець. Ви не прив'язані до нас."><b>01</b><span><strong>Код і налаштування</strong>Усе, що ми написали й налаштували, передаємо вам.</span></div>
       <div data-more="Облікові записи, ключі й інтеграції заводяться на вас і під вашим контролем. Ми працюємо з мінімальними доступами, і ви можете закрити їх будь-коли.|Ваш бізнес не залежить від чужого пароля."><b>02</b><span><strong>Доступи</strong>Усі акаунти й ключі оформлені на вас.</span></div>
-      <div data-more="До кожного рішення додаємо інструкцію без жаргону: що це, як користуватись, що робити, якщо зупинилось. Показуємо команді, як працювати з новим.|Команда користується системою з першого дня, а не обходить її стороною."><b>03</b><span><strong>Інструкції</strong>Простою мовою, покроково, з назвами кнопок.</span></div>
+      <div data-more="До кожного рішення додаємо інструкцію без жаргону: що це, як користуватись, що робити, якщо зупинилось. Записуємо короткі відео на кілька хвилин: як цим користуватись щодня.|Команда користується системою з першого дня, а новий працівник розбирається сам, без вас."><b>03</b><span><strong>Інструкції й відео</strong>Простою мовою, з назвами кнопок, плюс короткі відео для команди.</span></div>
       <div data-more="Після запуску можемо взяти систему на підтримку: стежимо за зв'язками, додаємо показники й нові задачі. Обсяг і умови узгоджуємо окремо.|Вкладення не знецінюються: система розвивається разом із бізнесом."><b>04</b><span><strong>Підтримка</strong>За бажанням лишаємось поруч після запуску.</span></div>
     </div>
   </div>
@@ -927,7 +965,7 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
     <div class="audl">
       <div data-more="Розбираємо ваші відповіді й матеріали: CRM, таблиці, звіти, регламенти, скрипти продажів, мотивацію команди.|Ви вперше бачите всі процеси на одній схемі й розумієте, де саме втрачається час."><b>01</b><span><strong>Карта процесів</strong>Як насправді рухаються замовлення, гроші й товар.</span></div>
       <div data-more="ШІ проходить по даних і шукає розриви: ручне перенесення, подвійне введення, розбіжності між системами, заявки без відповіді.|Ви бачите втрати в конкретних місцях, а не «десь у процесах»."><b>02</b><span><strong>Де губляться час і гроші</strong>Конкретні місця, а не загальні слова.</span></div>
-      <div data-more="Для кожного місця пропонуємо рішення й тариф: проста зв'язка, ШІ-агент чи показник на пульті. З порядком і ціною.|Ви вкладаєте спершу туди, де віддача найшвидша."><b>03</b><span><strong>План автоматизації</strong>Що робити першим, що другим і скільки це коштуватиме.</span></div>
+      <div data-more="Для кожного місця пропонуємо рішення й тариф: проста зв'язка, ШІ-агент чи показник на пульті. З порядком, ціною й підрахунком, скільки годин і грошей на місяць це звільнить.|Ви бачите користь ще до старту й вкладаєте спершу туди, де віддача найшвидша."><b>03</b><span><strong>План і користь до старту</strong>Що робити першим, скільки це коштуватиме і скільки годин та грошей зекономить.</span></div>
       <div data-more="Якщо автоматизація вам не окупиться або задача не наша, ми так і скажемо.|Аудит корисний навіть без продовження: план лишається у вас."><b>04</b><span><strong>Чесна відповідь</strong>Чи можемо ми бути вам корисні.</span></div>
     </div>
   </div>
@@ -935,14 +973,25 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
 
 <section class="s" id="contact"><div class="wrap">
   <div class="final rv">
-    <span class="eyebrow">Зв'язок</span>
-    <h2 style="margin-top:18px">Що у вас досі робиться руками?</h2>
-    <p>Залиште заявку: опишіть задачу кількома реченнями. Відповімо особисто, чи можна її автоматизувати, скільки це займе і скільки коштуватиме.</p>
+    <span class="eyebrow">Тест · 1 хвилина · без реєстрації</span>
+    <h2 style="margin-top:18px">Скільки коштує вам ручна робота?</h2>
+    <p>Позначте, що у вас досі робиться руками, і скільки часу це забирає щодня. Тест одразу порахує, скільки годин на місяць іде на рутину, і покаже, що з цього можна передати автоматиці. Результат бачите одразу, контакти лишати не обов'язково.</p>
     <div class="cta" style="justify-content:center;margin-top:0">
-      <button class="btn mag" type="button" data-req>Залишити заявку <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 11l6-6M6 5h5v5"/></svg></button>
+      <button class="btn mag" type="button" data-rt>Порахувати мої втрати <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
     </div>
-    <p style="margin:22px auto 0;font-size:17px;color:var(--fg)">Напишіть нам, ми спробуємо вам допомогти!</p>
+    <p style="margin:22px auto 0;font-size:17px;color:var(--fg)">Або просто <button type="button" class="rtlink" data-req>напишіть нам</button>, ми спробуємо вам допомогти!</p>
   </div>
+  <div class="svbox rv"><div class="head" style="margin-bottom:0">
+    <span class="eyebrow">Окремо про кожну послугу</span>
+    <h2 data-scr>Що саме ми налаштовуємо</h2>
+    <p>Короткі сторінки про найчастіші задачі: що болить, що робимо і що ви отримуєте.</p>
+  </div>
+  <div class="svl">
+    <a href="poslugy/keycrm-checkbox/"><i>01</i><b>Сайт, KeyCRM і Checkbox в одній зв'язці</b><span>Замовлення, оплати, чеки й ТТН без ручного перенесення.</span></a>
+    <a href="poslugy/zvirka-zalyshkiv/"><i>02</i><b>Звірка залишків і артикулів</b><span>Сайт і CRM показують однакову наявність, розбіжності видно одразу.</span></a>
+    <a href="poslugy/pult-biznesu/"><i>03</i><b>Пульт вашого бізнесу</b><span>Продажі, гроші, реклама й залишки на одному екрані в телефоні.</span></a>
+    <a href="poslugy/checkbox-pid-klyuch/"><i>04</i><b>Checkbox під ключ</b><span>КЕП, каси, касири й автоматичні чеки за правилами.</span></a>
+  </div></div>
 </div></section>
 
 </main>
@@ -975,6 +1024,28 @@ body.foc .i2>*{opacity:0!important;pointer-events:none;transition-delay:0s!impor
     <div class="astep" data-s="3" hidden><div class="adone" id="adone"></div></div>
     <p class="aerr" id="aerr" role="alert"></p>
     <footer><button type="button" class="btn ghost sm" id="audb">Назад</button><button type="submit" class="btn sm" id="audgo">Далі</button></footer>
+  </form>
+</dialog>
+
+<dialog id="rt" class="dlg" aria-labelledby="rth">
+  <form id="rtf" class="dform" novalidate>
+    <header><div><span class="eyebrow">Скільки коштує вам ручна робота</span><h3 id="rth">Тест: <span id="rtn">крок 1 із 3</span></h3></div><button type="button" class="xbtn" id="rtx" aria-label="Закрити">×</button></header>
+    <div class="audbar"><i id="rtbar"></i></div>
+    <div class="astep" data-s="0">
+      <fieldset><legend>Що у вас досі робиться руками? Позначте все, що є.</legend><div class="rtl" id="rtl"></div></fieldset>
+    </div>
+    <div class="astep" data-s="1" hidden>
+      <p class="fine" style="font-size:13px">Скільки часу це забирає в середньому за робочий день? Рахуйте разом для всіх людей, хто це робить.</p>
+      <div class="rtt" id="rtt"></div>
+      <label>Скільки коштує година роботи людини, яка це робить? <em>(грн, необов'язково)</em><input type="number" name="rate" min="0" max="10000" step="10" inputmode="numeric" placeholder="Наприклад: 150"></label>
+    </div>
+    <div class="astep" data-s="2" hidden><div class="rtres" id="rtres"></div>
+      <div class="two"><label>Як до вас звертатись?<input type="text" name="name" maxlength="80" autocomplete="name"></label><label>Куди надіслати план?<input type="text" name="contact" maxlength="120" placeholder="пошта, Telegram або телефон"></label></div>
+      <p class="fine">Хочете план, як прибрати цю рутину? Залиште контакт, і ми відповімо особисто. Не хочете, просто закрийте вікно: результат уже ваш.</p>
+    </div>
+    <div class="astep" data-s="3" hidden><div class="adone" id="rtdone"></div></div>
+    <p class="aerr" id="rterr" role="alert"></p>
+    <footer><button type="button" class="btn ghost sm" id="rtb">Назад</button><button type="submit" class="btn sm" id="rtgo">Далі</button></footer>
   </form>
 </dialog>
 
@@ -1636,6 +1707,71 @@ $$('.card').forEach(function(c){
     show(3);
   });
   show(0);
+})();
+
+
+/* ---------- тест «Скільки коштує вам ручна робота» ---------- */
+(function(){
+  var dlg=$('#rt'), form=$('#rtf'); if(!dlg) return;
+  var P=[
+    ['orders','Переношу замовлення із сайту, Instagram чи Telegram у CRM або таблицю','Замовлення самі потрапляють у CRM разом з оплатою й доставкою.'],
+    ['ttn','Створюю ТТН Нової пошти чи Укрпошти вручну','ТТН створюється з CRM, статуси доставки оновлюються самі.'],
+    ['pay','Звіряю оплати й видаю чеки','Checkbox видає чек сам після оплати, гроші видно у Finmap.'],
+    ['stock','Залишки на сайті й у CRM не сходяться, звіряю руками','Скрипт сам звіряє залишки й артикули та показує розбіжності.'],
+    ['night','Відповідаю клієнтам увечері, вночі й у вихідні або втрачаю їх','ШІ-менеджер відповідає на типові питання будь-коли.'],
+    ['report','Збираю цифри бізнесу з різних таблиць і кабінетів','Пульт у телефоні збирає продажі, гроші й залишки сам.'],
+    ['team','Перевіряю звіти менеджерів і рахую їм бонуси','Звіт сам звіряє роботу менеджерів із CRM і рахує бонуси.'],
+    ['ads','Вручну рахую, яка реклама приносить продажі','Мітки на замовленнях і дані реклами зводяться в один звіт.']
+  ];
+  var T=[[15,'15 хв'],[30,'30 хв'],[60,'1 год'],[120,'2 год і більше']], DAYS=22;
+  var list=$('#rtl'), tbox=$('#rtt'), res=$('#rtres'), steps=$$('.astep',form), st=0, bar=$('#rtbar'), num=$('#rtn'), back=$('#rtb'), go=$('#rtgo'), err=$('#rterr'), done=$('#rtdone'), sending=false, summary='';
+  P.forEach(function(p){var l=document.createElement('label');l.innerHTML='<input type="checkbox" name="pain" value="'+p[0]+'"><i></i><span></span>';l.querySelector('span').textContent=p[1];list.appendChild(l)});
+  function picked(){return $$('input[name=pain]:checked',form).map(function(i){return P.filter(function(p){return p[0]===i.value})[0]})}
+  function times(){picked().forEach(function(p){if($('[data-k="'+p[0]+'"]',tbox))return;
+      var d=document.createElement('div');d.setAttribute('data-k',p[0]);var b=document.createElement('b');b.textContent=p[1];d.appendChild(b);
+      var o=document.createElement('div');o.className='opts';T.forEach(function(t,i){var l=document.createElement('label');l.innerHTML='<input type="radio" name="t_'+p[0]+'" value="'+t[0]+'"'+(i===1?' checked':'')+'><span>'+t[1]+'</span>';o.appendChild(l)});d.appendChild(o);tbox.appendChild(d)});
+    var keep=picked().map(function(p){return p[0]});$$('[data-k]',tbox).forEach(function(d){d.hidden=keep.indexOf(d.getAttribute('data-k'))<0})}
+  function fmt(n){return Math.round(n).toLocaleString('uk-UA')}
+  function result(){
+    var rate=Math.max(0,Number(new FormData(form).get('rate'))||0), rows=picked().map(function(p){var m=Number(($('input[name="t_'+p[0]+'"]:checked',form)||{}).value)||30;return {p:p,m:m}}).sort(function(a,b){return b.m-a.m});
+    var mins=rows.reduce(function(a,r){return a+r.m},0), hours=mins*DAYS/60, daysW=hours/8;
+    res.innerHTML='';
+    var big=document.createElement('div');big.className='rtbig';
+    big.innerHTML='<small>На ручну роботу йде приблизно</small><strong></strong><span></span>';
+    big.querySelector('strong').textContent='≈ '+fmt(hours)+' год на місяць';
+    var dn=Math.round(daysW), dw=dn%10===1&&dn%100!==11?'робочий день':(dn%10>=2&&dn%10<=4&&(dn%100<12||dn%100>14)?'робочі дні':'робочих днів');
+    big.querySelector('span').textContent=(daysW<1?'Це менше одного робочого дня':'Це близько '+dn+' '+dw)+' на місяць'+(rate?' і приблизно '+fmt(hours*rate)+' грн оплати праці.':'.');
+    res.appendChild(big);
+    var h=document.createElement('p');h.className='fine';h.textContent='Що з цього можна передати автоматиці:';res.appendChild(h);
+    var ul=document.createElement('ul');ul.className='rtfix';
+    rows.forEach(function(r){var li=document.createElement('li'),b=document.createElement('b'),e=document.createElement('em');b.textContent=r.p[1]+' · '+(T.filter(function(t){return t[0]===r.m})[0]||[0,r.m+' хв'])[1]+' на день';e.textContent=r.p[2];li.appendChild(b);li.appendChild(e);ul.appendChild(li)});
+    res.appendChild(ul);
+    var n=document.createElement('p');n.className='fine';n.textContent='Розрахунок за вашими відповідями: хвилини на день × '+DAYS+' робочі дні. Це орієнтир, точну картину покаже розбір вашого бізнесу.';res.appendChild(n);
+    summary='Тест «Скільки коштує вам ручна робота»: ≈ '+fmt(hours)+' год на місяць'+(rate?', ≈ '+fmt(hours*rate)+' грн (ставка '+rate+' грн/год)':'')+'\n'+rows.map(function(r){return '• '+r.p[1]+' — '+r.m+' хв/день'}).join('\n');
+  }
+  function show(n){st=n;steps.forEach(function(s,i){s.hidden=i!==n});bar.style.width=(Math.min(n+1,3)/3*100)+'%';num.textContent=n<3?'крок '+(n+1)+' із 3':'готово';back.style.visibility=n>0&&n<3?'visible':'hidden';go.textContent=n===0?'Далі':n===1?'Показати результат':n===2?'Отримати план':'Закрити';err.textContent=''}
+  function open(){if(dlg.open)return; if(st===3){form.reset();tbox.innerHTML='';show(0)} if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','')}
+  $$('[data-rt]').forEach(function(b){b.addEventListener('click',open)});
+  $('#rtx').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  back.addEventListener('click',function(){if(st>0)show(st-1)});
+  form.addEventListener('submit',async function(e){
+    e.preventDefault(); if(sending) return;
+    if(st===3){dlg.close();return}
+    if(st===0){if(!picked().length){err.textContent='Позначте хоча б один пункт.';return} times();show(1);return}
+    if(st===1){result();show(2);return}
+    var fd=new FormData(form), contact=String(fd.get('contact')||'').trim(), name=String(fd.get('name')||'').trim();
+    if(contact.length<5){err.textContent='Вкажіть, куди надіслати план: пошту, Telegram або телефон.';return}
+    var ok=false;
+    if(window.CONSULTANT_URL){sending=true;go.disabled=true;go.textContent='Надсилаю…';
+      try{var r=await fetch(window.CONSULTANT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'audit',form:{business:summary,contact:contact,name:name,extra:"ЗАЯВКА НА ЗВ'ЯЗОК із тесту «Скільки коштує вам ручна робота» (це не заявка на аудит)"}})});var j=await r.json();ok=!!j.ok}catch(x){}
+      sending=false;go.disabled=false}
+    if(!ok){go.textContent='Отримати план';err.textContent='Не вдалося надіслати. Спробуйте ще раз за хвилину.';return}
+    done.innerHTML='';var b=document.createElement('b'),p=document.createElement('p');b.textContent='Дякуємо, отримали';p.textContent='Ми подивимось ваші відповіді й особисто напишемо, що з цього можна автоматизувати першим.';done.appendChild(b);done.appendChild(p);
+    show(3);
+  });
+  show(0);
+  if(location.hash==='#test'){var c=$('#contact');if(c)c.scrollIntoView();setTimeout(open,700)}
 })();
 
 /* ---------- заявка на зв'язок напряму (головна кнопка) ---------- */
